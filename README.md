@@ -1,5 +1,3 @@
-This is a ruby script that will recreate enumerable methods #each, #each_with_index, #select, #all?, #any?, #none?, #count, #map, #inject
-
 # Enumerables Project
 
 This is my version of implementing some of [Ruby's Enumerable Module](https://ruby-doc.org/core-2.4.1/Enumerable.html) traversal and searching methods.
