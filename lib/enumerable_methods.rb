@@ -9,22 +9,12 @@ module Enumerable
 
 	def my_each_with_index
 		i = 0
-		for element in self
-			yield(element,i)
+		self.my_each do |element|
+			yield(element, i)
 			i += 1
 		end
 		self
 	end
-
-=begin
-	def my_select
-		selected = []
-		for element in self
-			selected.push(element) if yield(element) != false
-		end
-		selected
-	end
-=end
 
 	def my_select
 		selected = [] if self.class == Array
@@ -73,7 +63,8 @@ module Enumerable
 
 	def my_map(proc=nil)
 		mapped = []
-		unless proc && proc.class == proc
+
+		if proc && proc.class == proc
 			self.my_each do |element|
 				mapped.push(proc.call(element))
 			end
@@ -94,8 +85,10 @@ module Enumerable
 	end
 end
 
+=begin
 def multiply_els(array)
 	array.my_inject(1) { |value, element| value * element }
 end
 
 multiply_els([2,4,5])
+=end
